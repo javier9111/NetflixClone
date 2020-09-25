@@ -7,14 +7,18 @@ function Nav() {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.screenY > 100) {
+        console.log(window.screenY);
         handleShow(true);
-      } else handleShow(false);
+      } else {
+        console.log(window.screenY);
+        handleShow(false);
+      }
     });
     return () => {
       window.removeEventListener("scroll");
     };
   }, []);
-  console.log(show);
+
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <img
